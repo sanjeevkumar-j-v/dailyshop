@@ -4,9 +4,16 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const expressLayouts = require("express-ejs-layouts");
+
 var indexRouter = require('./routes/index');
 
 var app = express();
+
+app.use(expressLayouts);
+
+app.set("layout extractStyles", true);
+app.set("layout extractScripts", true);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
