@@ -1,3 +1,3 @@
 module.exports.home = function(req, res, next) {
-  return res.render('index', { title: 'Flipkart' });
+  return res.render('home', { title: 'Flipkart' });
 }
