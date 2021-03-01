@@ -73,7 +73,8 @@ app.use(
     //       }
     //     ),
     store: MongoStore.create({
-      mongoUrl: "mongodb://localhost/daily-shop-store",
+      mongoUrl:
+        "mongodb+srv://dailyshop:dailyshop@cluster0.cxu3q.mongodb.net/daily-shop-store",
     }),
   })
 );
