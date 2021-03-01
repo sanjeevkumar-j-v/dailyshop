@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 
 //connect to the database
 mongoose.connect(
-  // "mongodb+srv://dailyshop:dailyshop@cluster0.cxu3q.mongodb.net/dailyshop_db",
-  "mongodb://localhost/dailyshop_local_db",
+  "mongodb+srv://dailyshop:dailyshop@cluster0.cxu3q.mongodb.net/dailyshop_db",
+  // "mongodb://localhost/dailyshop_local_db",
   { useNewUrlParser: true },
   { useUnifiedTopology: true }
 );
