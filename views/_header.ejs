@@ -20,7 +20,7 @@
             <!-- start header top left -->
             <div class="aa-header-top-left">
               <!-- start language -->
-              <div class="aa-language">
+              <!-- <div class="aa-language">
                 <div class="dropdown">
                   <a
                     class="btn dropdown-toggle"
@@ -47,11 +47,11 @@
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> -->
               <!-- / language -->
 
               <!-- start currency -->
-              <div class="aa-currency">
+              <!-- <div class="aa-currency">
                 <div class="dropdown">
                   <a
                     class="btn dropdown-toggle"
@@ -74,25 +74,33 @@
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> -->
               <!-- / currency -->
               <!-- start cellphone -->
               <div class="cellphone hidden-xs">
-                <p><span class="fa fa-phone"></span>00-62-658-658</p>
+                <% if (locals.user) {%>
+                <p><span class="fa fa-user"></span> <%= user.name %></p>
+                <% } else { %>
+                <p><span class="fa fa-user"></span></p>
+                <% } %>
               </div>
               <!-- / cellphone -->
             </div>
             <!-- / header top left -->
             <div class="aa-header-top-right">
               <ul class="aa-head-top-nav-right">
-                <li><a href="account.html">My Account</a></li>
+                <!-- <li><a href="account.html">My Account</a></li>
                 <li class="hidden-xs"><a href="wishlist.html">Wishlist</a></li>
                 <li class="hidden-xs"><a href="cart.html">My Cart</a></li>
-                <li class="hidden-xs"><a href="checkout.html">Checkout</a></li>
+                <li class="hidden-xs"><a href="checkout.html">Checkout</a></li> -->
                 <li>
-                  <a href="" data-toggle="modal" data-target="#login-modal"
-                    >Login</a
-                  >
+                  <% if (locals.user) {%>
+                  <a href="/users/sign-out"> Logout </a>
+                  <% } else { %>
+                  <a href="" data-toggle="modal" data-target="#login-modal">
+                    Login
+                  </a>
+                  <% } %>
                 </li>
               </ul>
             </div>
@@ -112,7 +120,7 @@
             <!-- logo  -->
             <div class="aa-logo">
               <!-- Text based logo -->
-              <a href="index.html">
+              <a href="/">
                 <span class="fa fa-shopping-cart"></span>
                 <p>
                   daily<strong>Shop</strong> <span>Your Shopping Partner</span>
@@ -127,9 +135,9 @@
               <a class="aa-cart-link" href="#">
                 <span class="fa fa-shopping-basket"></span>
                 <span class="aa-cart-title">SHOPPING CART</span>
-                <span class="aa-cart-notify">2</span>
+                <span class="aa-cart-notify">0</span>
               </a>
-              <div class="aa-cartbox-summary">
+              <!-- <div class="aa-cartbox-summary">
                 <ul>
                   <li>
                     <a class="aa-cartbox-img" href="#"
@@ -165,7 +173,7 @@
                   href="checkout.html"
                   >Checkout</a
                 >
-              </div>
+              </div> -->
             </div>
             <!-- / cart box -->
             <!-- search box -->
