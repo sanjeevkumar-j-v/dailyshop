@@ -6,6 +6,7 @@ var userController = require("../controllers/users_controller");
 
 /* GET home page. */
 router.get('/', homeController.home);
+router.get("/cart", homeController.cart);
 router.get("/sign-up", userController.signUp);
 router.use('/users/', require('./user'));
 
