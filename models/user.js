@@ -15,8 +15,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    phone: {
+      type: Number
+    },
     products: {
-      type: [mongoose.Schema.ObjectId]
+      type: [mongoose.Schema.ObjectId],
     },
   },
   {
