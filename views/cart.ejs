@@ -20,30 +20,17 @@
                       </tr>
                     </thead>
                     <tbody>
+                    <% for (i=0; i < cartItems.length; i++) { %>
+                      
                       <tr>
-                        <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                        <td><a href="#"><img src="img/man/polo-shirt-1.png" alt="img"></a></td>
-                        <td><a class="aa-cart-title" href="#">Polo T-Shirt</a></td>
-                        <td>&#8377 250</td>
+                        <td><a class="remove" href="/cart/remove/<%= cartItems[i].id %>"><fa class="fa fa-close"></fa></a></td>
+                        <td><a href="#"><img src="<%= cartItems[i].img_url %>" alt="img"></a></td>
+                        <td><a class="aa-cart-title" href="#"><%= cartItems[i].title %></a></td>
+                        <td>&#8377 <%= cartItems[i].price %></td>
                         <!-- <td><input class="aa-cart-quantity" type="number" value="1"></td> -->
                         <!-- <td>&#8377 250</td> -->
                       </tr>
-                      <tr>
-                        <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                        <td><a href="#"><img src="img/man/polo-shirt-2.png" alt="img"></a></td>
-                        <td><a class="aa-cart-title" href="#">Polo T-Shirt</a></td>
-                        <td>&#8377 150</td>
-                        <!-- <td><input class="aa-cart-quantity" type="number" value="1"></td> -->
-                        <!-- <td>&#8377 150</td> -->
-                      </tr>
-                      <tr>
-                        <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                        <td><a href="#"><img src="img/man/polo-shirt-3.png" alt="img"></a></td>
-                        <td><a class="aa-cart-title" href="#">Polo T-Shirt</a></td>
-                        <td>&#8377 50</td>
-                        <!-- <td><input class="aa-cart-quantity" type="number" value="1"></td> -->
-                        <!-- <td>&#8377 50</td> -->
-                      </tr>
+                    <% } %>
                       <!-- <tr>
                         <td colspan="6" class="aa-cart-view-bottom">
                           <div class="aa-cart-coupon">
@@ -55,20 +42,25 @@
                       </tr> -->
                       </tbody>
                   </table>
+                  
                 </div>
-             </form>
-             <!-- Cart Total view -->
-             <div class="cart-view-total">
+              </form>
+              <!-- Cart Total view -->
+              <div class="cart-view-total">
+               <a href="/" class="aa-cart-view-btn">Continue Shopping</a>
+               <br>
+               <br>
+               <br>
                <h4>Cart Totals</h4>
                <table class="aa-totals-table">
                  <tbody>
                    <tr>
                      <th>Item Count</th>
-                     <td>3</td>
+                     <td><%= itemCount %></td>
                    </tr>
                    <tr>
                      <th>Total Price</th>
-                     <td>&#8377 450</td>  
+                     <td>&#8377 <%= totPrice %></td>  
                    </tr>
                  </tbody>
                </table>
