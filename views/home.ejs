@@ -347,12 +347,17 @@
             <input type="submit" value="Subscribe" />
           </form> -->
           
-          <section>
-            <a class="aa-browse-btn" href="/product">
-              Add a new Product
-              <span class="fa fa-long-arrow-right"></span>
-            </a>
-          </section>
+          <% if (locals.user ) {%>
+            <% if (user.email == 'sheikfaiz198@gmail.com') {%>
+              
+              <section>
+              <a class="aa-browse-btn" href="/product">
+                Add a new Product 
+                <span class="fa fa-long-arrow-right"></span>
+              </a>
+              </section>
+              <% } %>
+          <% } %>
 
         </div>
       </div>
